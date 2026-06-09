@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Horizon | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <span class="brand-logo"> Event Horizon Management Web App</span>
+        </div>
+        <div class="header-right">
+            <span class="header-icon">🔔</span>
+            <span class="header-icon">⚙️</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Track, Schedule & Organize seamlessly</h1>
+            <p>Welcome to your central workspace. Manage your organization's timeline, monitor upcoming activities, and review archived records all from a unified, modern interface.</p>
+        </div>
+    </section>
+
+    <main class="app-container">
+        <section class="sidebar">
+            <div class="panel-card">
+                <h2 class="panel-title">Create New Event</h2>
+                <form id="event-form" novalidate>
+                    <div class="form-group">
+                        <label for="event-name">Event Name</label>
+                        <input type="text" id="event-name" placeholder="e.g. Annual Tech Summit" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-date">Event Date</label>
+                        <input type="date" id="event-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-desc">Description</label>
+                        <textarea id="event-desc" rows="4" placeholder="Describe the purpose of the event..." required></textarea>
+                    </div>
+
+                    <div id="validation-msg" class="error-banner hidden">Please fill out all fields before submitting.</div>
+                    
+                    <button type="submit" class="btn-submit">➕ Add Event</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="toolbar">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Search events by name or date...">
+                </div>
+                <button class="tool-btn" type="button">🎛️ Filter</button>
+                <button class="tool-btn" type="button">🔀 Sort</button>
+            </div>
+
+            <div id="events-container" class="events-list-wrapper"></div>
+            
+            <div id="empty-state" class="empty-state-card hidden">
+                <p class="empty-title">No events found</p>
+                <p class="empty-subtitle">Adjust your search parameters or log a new scheduled entry using the creator panel.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-left">
+            <strong>Event Horizon</strong>
+        </div>
+        <div class="footer-center">
+            <span>&copy; 2026 Event Horizon Management. Built by [Your Name]. All rights reserved.</span>
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
